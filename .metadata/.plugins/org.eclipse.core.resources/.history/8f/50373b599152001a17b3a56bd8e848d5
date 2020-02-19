@@ -1,0 +1,11 @@
+package lv.gundega.tips;
+
+public class TestIfCorrectSymbol {
+
+	public void testInput(String input, String a, String b) {
+		while(input.toLowerCase()!=a || input.toLowerCase()!=b) {
+			System.out.println("This command is undefined");
+			break;
+		}
+	}
+}

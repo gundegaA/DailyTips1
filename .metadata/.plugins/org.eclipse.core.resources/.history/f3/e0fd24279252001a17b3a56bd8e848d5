@@ -1,0 +1,92 @@
+package lv.gundega;
+
+import java.util.Scanner;
+
+import lv.gundega.tips.PrintTipsForMan;
+import lv.gundega.tips.PrintTipsForWoman;
+import lv.gundega.tips.TestIfCorrectSymbol;
+
+public class TestTips {
+
+	public static void main(String[] args) throws Exception {
+
+		String[] arr = new String[1];
+		String answer;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Insert your gender: -m- or -f-!");
+		answer = scan.nextLine().toLowerCase();
+	
+		while (answer!="m" || answer!="f") {
+			System.out.println("This command is undefined");
+			answer = scan.nextLine().toLowerCase();
+		}
+		
+//*****************************************************WOMAN******************************************************************
+		// ADD OR PRINT TIP
+		if (answer.equals("f")) {
+			System.out.println("If you want to recieve tips, write -r-, if you want to add tips, write -a-!");
+			answer = scan.nextLine().toLowerCase();
+
+			// ADD TIP FOR WOMAN
+			if (answer.equals("a")) {
+
+				do {
+					System.out.println("Please write your tip, then press ENTER");
+					answer = scan.nextLine().toLowerCase();
+					PrintTipsForWoman printTipsForWoman = new PrintTipsForWoman();
+					printTipsForWoman.addTipForWoman(answer);
+					System.out.println("Tip added.");
+					System.out.println("If you want add another tip, write -y-, else -n-!");
+					answer = scan.nextLine().toLowerCase();
+
+				} while (answer.equals("y"));
+			}
+
+			// PRINT TIP FOR WOMAN
+			if (answer.equals("n") || answer.equals("r")) {
+				do {
+					PrintTipsForWoman printTipsForWoman = new PrintTipsForWoman();
+					printTipsForWoman.printRandomTipForWoman();
+					arr[0] = printTipsForWoman.lineTo;
+
+					// GOOD OR NOT GOOD TIP
+					System.out.println("If this tip was good, type -y-, else type -n-");
+					answer = scan.nextLine().toLowerCase();
+					if (answer.equals("n")) {
+
+						System.out.println("If you want to delete this tip, type -d-!");
+						System.out.println("If you want to choose different tip, type -r-!");
+						answer = scan.nextLine().toLowerCase();
+					
+
+					if (answer.equals("d")) {
+						// DELETE TIP
+						PrintTipsForWoman deleteTipForWoman = new PrintTipsForWoman();
+						deleteTipForWoman.removeLineFromFile(arr[0]);
+						PrintTipsForWoman deleteEmptyLines = new PrintTipsForWoman();
+						deleteEmptyLines.removeEmptyLine();
+						System.out.println("Tip is deleted!");
+						System.out.println("Your new tip is:");
+					}
+					
+					}
+					if (answer.equals("y")) {
+						System.out.println("Thanks! Have a nice day! ");
+						break;
+					}
+					}
+				while (answer!= "y");
+					
+				
+			
+			}
+		}
+
+//			else {
+//				System.out.println("Invalid command!");
+//			}
+
+		scan.close();
+	}
+
+}

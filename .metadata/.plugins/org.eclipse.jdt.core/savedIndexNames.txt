@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\gunde\eclipse-workspace\DailyTips-master\.metadata\.plugins\org.eclipse.jdt.core
+2937948445.index
+1671692264.index

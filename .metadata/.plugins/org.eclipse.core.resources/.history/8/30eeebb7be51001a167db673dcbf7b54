@@ -1,0 +1,53 @@
+package lv.gundega.tips;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Random;
+
+public class PrintTipsForWoman {
+	
+	//METHOD PRINTS TIP FOR WOMAN
+	public void  printRandomTipForWoman() {
+	try {int totalLines = 0;
+	}
+	File file = new File("tipsForWoman.txt");
+	BufferedReader br = null;
+	//count how much lines in text file
+	br = new BufferedReader(new FileReader(file));
+	while ((br.readLine()) != null) {
+		totalLines++;
+	}
+	br.close();
+	///////////// generate random number from counted lines (because min = 0, we count +1)
+	Random random = new Random();
+	int randomInt = random.nextInt(totalLines) + 1;
+
+	// print out chosen random line, only way - go through all lines and print one we need
+	int counter = 0;
+	br = new BufferedReader(new FileReader(file));
+	String line;
+	while ((line = br.readLine()) != null) {
+		counter++;
+		if (counter == randomInt) {
+			System.out.println("Your tip for today is: "+line);
+		}
+	}
+	br.close();
+	}catch (Exception ex){
+	}
+	
+	//METHOD ADD TIPS FOR WOMAN
+	public void  addTipForWoman() {
+	File fileObj = new File ("tipsForWoman.txt");
+	FileWriter fw = new FileWriter (fileObj,true);
+	BufferedWriter bw = new BufferedWriter((fw));
+	//bw.newLine();
+	bw.write(" \n Jauns teksts");
+	bw.write(" \n Jauns teksts numur2");
+	bw.close();
+	
+    
+	
+	}
+}

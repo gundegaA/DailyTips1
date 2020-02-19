@@ -1,0 +1,35 @@
+package lv.gundega;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.PrintWriter;
+
+public class TEST {
+
+	public static void main(String[] args) throws Exception {
+		 // PrintWriter object for output.txt 
+      //  PrintWriter pw = new PrintWriter("tipsForMan.txt"); 
+          
+        // BufferedReader object for input.txt 
+		
+		File file = new File("tipsForMan.txt");
+		int counter = 0;
+		BufferedReader br = null;
+		br = new BufferedReader(new FileReader(file));
+		String line;
+		while ((line = br.readLine()) != null) {
+			counter++;
+			if (counter == 2) {
+				System.out.println("Your tip for today is: "+line);
+			}
+		}
+		br.close();
+		
+		file.delete();
+		
+		
+		
+	}
+	}
+

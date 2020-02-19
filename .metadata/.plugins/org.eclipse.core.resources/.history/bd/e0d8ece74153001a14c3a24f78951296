@@ -1,0 +1,42 @@
+package lv.gundega.tips;
+
+import java.util.Scanner;
+
+public class CheckInput {
+	
+	//do {
+//	    System.out.println("Enter m or f!");
+//	    while (!scan.hasNext("[mf]")) {
+//	        System.out.println("That's not m or f");
+//	        scan.next(); // this is important!
+//	    }
+//	    answer = scan.nextLine().toLowerCase();
+//	} while (answer!="m" || answer!="f");
+//	System.out.println("Thank you! Got " + answer);
+	
+	//METHOD
+
+	
+	//METHOD
+		public  void checkInput(String a, String b) {
+			String answer = "";
+			boolean checkInput;
+			
+			while(checkInput=false) {
+				System.out.println("Input "+a+" or "+b+"!");
+				Scanner scan = new Scanner(System.in);
+				answer = scan.nextLine().toLowerCase();
+				if(answer.equals(b)||answer.equals(a)) {
+					checkInput=true;
+				}else {
+					System.out.println("Invalid input!");
+					System.out.println("Input "+a+" or "+b+"!");
+					answer = scan.nextLine().toLowerCase();
+					checkInput=false;
+				}
+					
+			}
+		}
+			
+	
+}

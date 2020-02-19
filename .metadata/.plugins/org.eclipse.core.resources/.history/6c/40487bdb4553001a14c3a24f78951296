@@ -1,0 +1,32 @@
+package lv.gundega;
+
+import java.util.Scanner;
+
+public class TEST {
+
+public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		
+//		String a= "m";
+//		String b = "f";
+//		String answer = "";
+//		boolean checkInput=true;
+//			
+//			while(checkInput) {
+//				System.out.println("Input "+a+" or "+b+"!");
+//				Scanner scan = new Scanner(System.in);
+//				answer = scan.nextLine().toLowerCase();
+//				if(answer.equals(b)||answer.equals(a)) {
+//					//checkInput=false;
+//					System.out.println("Thanks");
+//				}else {
+//					System.out.println("Invalid input!");
+//					System.out.println("Input "+a+" or "+b+"!");
+//					answer = scan.nextLine().toLowerCase();
+//					checkInput=true;
+//				}
+//			}
+//		}
+
+}
+}

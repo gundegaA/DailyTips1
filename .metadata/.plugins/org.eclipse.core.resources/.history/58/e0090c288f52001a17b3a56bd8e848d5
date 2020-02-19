@@ -1,0 +1,29 @@
+package lv.gundega;
+
+import java.util.Scanner;
+
+
+import lv.gundega.tips.PrintTipsForWoman;
+
+public class TestRemoving {
+
+public static void main(String[] args) throws Exception {
+
+		
+		
+		String gender;
+		Scanner scan = new Scanner (System.in);
+		System.out.println("Insert your gender: -m- or -f-!");
+		gender = scan.nextLine().toLowerCase();
+		if (gender.equals("f") ) {
+			PrintTipsForWoman printTipsForWoman = new PrintTipsForWoman();
+			printTipsForWoman.printRandomTipForWoman();
+		}
+		TEST remove = new TEST();
+		remove.removeLineFromFile("tipsForWoman.txt","Drink 3 different teas." );
+		scan.close();
+		}
+
+	
+
+}

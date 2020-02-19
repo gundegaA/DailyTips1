@@ -1,0 +1,46 @@
+package lv.gundega.tips;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Random;
+
+public class PrintTipsForWoman {
+	
+	//METHOD PRINTS TIP FOR WOMAN
+	public void  printRandomTipForWoman() {
+	try {int totalLines = 0;
+	File file = new File("tipsForWoman.txt");
+	BufferedReader br = null;
+	//count how much lines in text file
+	br = new BufferedReader(new FileReader(file));
+	while ((br.readLine()) != null) {
+		totalLines++;
+	}
+	br.close();
+	//////////
+	System.out.println(totalLines);
+	///////////// generate random number from counted lines (because min = 0, we count +1)
+	Random random = new Random();
+	int randomInt = random.nextInt(totalLines) + 1;
+	System.out.println(randomInt);
+
+	// print out chosen random line, only way - go through all lines and print one we need
+	int counter = 0;
+	br = new BufferedReader(new FileReader(file));
+	String line;
+	while ((line = br.readLine()) != null) {
+		counter++;
+		if (counter == randomInt) {
+			System.out.println(line);
+		}
+	}
+	br.close();
+	}catch (Exception ex){
+      
+	}
+	
+    
+	
+	}
+}

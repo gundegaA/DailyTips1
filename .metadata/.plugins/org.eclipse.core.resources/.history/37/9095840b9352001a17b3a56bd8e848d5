@@ -1,0 +1,9 @@
+package lv.gundega.tips;
+
+public class TestIfCorrectSymbol {
+
+	private boolean check;
+	public void testInput(String input, String a, String b) {
+		
+	}
+}

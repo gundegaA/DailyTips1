@@ -1,0 +1,10 @@
+package lv.gundega.tips;
+
+public class CheckInput {
+
+	boolean checkInput = true;
+	String answer;
+	while(checkIn) {
+		
+	}
+}
